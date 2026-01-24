@@ -1,5 +1,4 @@
 // https://www.geeksforgeeks.org/problems/reverse-an-array/1
-
 // class Solution {
 //   public:
 //     void reverseArray(vector<int> &arr) {
@@ -18,7 +17,6 @@
 
 
 // https://www.geeksforgeeks.org/problems/check-if-an-array-is-sorted0701/1
-
 // class Solution {
 //   public:
 //     bool isSorted(vector<int>& arr) {
@@ -56,5 +54,60 @@
 //             nums[i] = nums[i] + nums[i-1];
 //         }
 //         return nums;
+//     }
+// };
+
+
+// https://www.geeksforgeeks.org/problems/largest-element-in-array4009/1
+// class Solution {
+//   public:
+//     int largest(vector<int> &arr) {
+//         // code here
+//         int largest = 0;
+//         for(int i=0; i<arr.size(); i++){
+//             if(arr[i] > largest) largest = arr[i];
+//         }
+//         return largest;
+//     }
+// };
+
+
+// https://www.geeksforgeeks.org/problems/second-largest3735/1
+// class Solution {
+//   public:
+//     int getSecondLargest(vector<int> &arr) {
+//         // code here
+//         int largest = INT_MIN, s_largest = INT_MIN;
+        
+//         for(int i : arr){
+//             if(i > largest){
+//                 s_largest = largest;
+//                 largest = i;
+//             }
+//             else if(i > s_largest && i < largest){
+//                 s_largest = i;
+//             }
+//         }
+//         return s_largest == INT_MIN ? -1 : s_largest;
+//     }
+// };
+
+
+
+// https://leetcode.com/problems/max-consecutive-ones/description/
+// class Solution {
+// public:
+//     int findMaxConsecutiveOnes(vector<int>& nums) {
+//         int count = 0;
+//         int count2 = 0;
+//         for(int i=0; i<nums.size(); i++){
+//             if(nums[i] == 1) count++;
+//             else{
+//                 if(count>count2) count2 = count;
+//                 count = 0;
+//             }
+//         }
+//         if(count>count2) count2 = count;
+//         return count2;
 //     }
 // };
