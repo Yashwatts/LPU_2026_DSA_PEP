@@ -76,3 +76,51 @@
 //         return true;
 //     }
 // };
+
+
+
+// https://leetcode.com/problems/is-subsequence/description/
+// class Solution {
+// public:
+//     bool isSubsequence(string s, string t) {
+//         int i = 0;
+//         int j = 0;
+
+//         while(i < s.length() && j < t.length()){
+//             if(s[i] == t[j]) i++;
+//             j++;
+//         }
+//         return i == s.length();
+//     }
+// };
+
+
+
+// https://www.geeksforgeeks.org/problems/find-first-repeated-character4108/1
+// class Solution {
+//   public:
+//     string firstRepChar(string s) {
+//         // code here.
+//         // vector<int> chars(26, 0);
+//         // for(int i=0; i<s.length(); i++){
+//         //     if(chars[s[i] - 'a'] == 1){
+//         //         return string(1, s[i]);
+//         //     }
+//         //     chars[s[i] - 'a']++;
+//         // }
+//         // return "-1";
+        
+//         // OR
+        
+//         string ans = "";
+//         vector<bool> seen(256, false);
+//         for(char i : s){
+//             if(seen[i]){
+//                 ans += i;
+//                 return ans;
+//             }
+//             seen[i] = true;
+//         }
+//         return "-1";
+//     }
+// };
