@@ -11,13 +11,21 @@ bool linearSearch(int arr[], int size, int key){
 }
 
 // Binary Search
-bool binarySearch(int arr[], int size, int key){
-    
+bool binarySearch(int arr[], int key, int left, int right){
+    if(left > right) return false;
+    int mid = (left + right) / 2;
+    if(arr[mid] == key) return true;
+    else if(key < arr[mid]){
+            return binarySearch(arr, key, left, mid - 1);
+        }
+        else{
+            return binarySearch(arr, key, mid + 1, right);
+        }
 }
 
 int main(){
     int arr[5] = {1, 2, 3, 4, 5};
     int size = 5;
     int key = 4;
-    cout << linearSearch(arr, size, key);
+    cout << binarySearch(arr, key, 0, 5);
 }
