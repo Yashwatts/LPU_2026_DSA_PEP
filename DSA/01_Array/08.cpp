@@ -1,3 +1,102 @@
+// https://leetcode.com/problems/remove-duplicates-from-sorted-array/
+// class Solution {
+// public:
+//     int removeDuplicates(vector<int>& nums) {
+//         int i = 0;
+//         for(int j=1; j<nums.size(); j++){
+//             if(nums[j] != nums[i]){
+//                 i++;
+//                 nums[i] = nums[j];
+//             }
+//         }
+//         return i + 1;
+//     }
+// };
+
+
+
+
+
+// https://leetcode.com/problems/merge-sorted-array/submissions/1903599151/
+// class Solution {
+// public:
+//     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
+//         int i = m-1;
+//         int j = n-1;
+//         int k = m+n-1;
+
+//         while(j >= 0){
+//             if(i>=0 && nums1[i] > nums2[j]){
+//                 nums1[k] = nums1[i];
+//                 k--;
+//                 i--;
+//             }
+//             else{
+//                 nums1[k] = nums2[j];
+//                 k--;
+//                 j--;
+//             }
+//         }
+//     }
+// };
+
+
+
+
+// https://www.geeksforgeeks.org/problems/sort-an-array-of-0s-1s-and-2s4231/1
+// class Solution {
+//   public:
+//     void sort012(vector<int>& arr) {
+//         // code here
+//         int low = 0;
+//         int mid = 0;
+//         int high = arr.size() - 1;
+        
+//         while(mid <= high){
+//             if(arr[mid] == 0) swap(arr[low++], arr[mid++]);
+//             else if(arr[mid] == 1) mid++;
+//             else swap(arr[mid], arr[high--]);
+//         }
+//     }
+// };
+
+
+
+// https://www.geeksforgeeks.org/problems/common-elements1132/1
+// class Solution {
+//   public:
+//     // Function to find common elements in three arrays.
+//     vector<int> commonElements(vector<int> &arr1, vector<int> &arr2,
+//                                vector<int> &arr3) {
+//         // Code Here
+//         int i = 0;
+//         int j = 0;
+//         int k = 0;
+        
+//         vector<int> result;
+        
+//         while(i < arr1.size() && j < arr2.size() && k < arr3.size()){
+//             if(arr1[i] == arr2[j] && arr2[j] == arr3[k]){
+//                 if(result.empty() || result.back() != arr1[i]){
+//                     result.push_back(arr1[i]);
+//                 }
+//                 i++;
+//                 j++;
+//                 k++;
+//             }
+//             else if(arr1[i] < arr2[j]) i++;
+//             else if(arr2[j] < arr3[k]) j++;
+//             else k++;
+//         }
+//         return result;
+//     }
+// };
+
+
+
+
+
+
 // https://www.geeksforgeeks.org/problems/pair-sum-in-a-sorted-and-rotated-array/1
 // User function Template for C++
 
