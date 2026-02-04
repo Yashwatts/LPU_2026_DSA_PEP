@@ -1,4 +1,4 @@
-// Deletion in Singly Linked List
+// Deletion in Circular Singly Linked List
 
 #include <iostream>
 using namespace std;
@@ -12,57 +12,48 @@ class Node{
         data = val;
         next = NULL;
     }
-};
+}; 
 
 void deleteAtEnd(Node* &head){
-
     if(head == NULL){
         return;
     }
 
-    if(head->next == NULL){
+    if(head->next == head){
         delete head;
         head = NULL;
         return;
     }
 
     Node* temp = head;
-
-    while(temp->next->next != NULL){
-        temp = temp->next;
-    }
-    delete temp->next;
-    temp->next = NULL;
-}
-
-void deleteAtBeg(Node* &head){
-    if(head == NULL){
-        return;
-    }
-    Node* temp = head;
-    head = head->next;
-    delete temp;
-}
-
-void deleteAtPos(Node* &head, int pos){
-    if(head == NULL) return;
-
-    if(pos == 1){
-        Node* temp = head;
-        head = head->next;
-        delete temp;
-        return;
-    }
-
-    Node* temp = head;
-    for(int i=1; i<pos - 1 && temp != NULL; i++){
+    while(temp->next->next != head){
         temp = temp->next;
     }
     Node* toDel = temp->next;
-    temp->next = temp->next->next;
+    temp->next = head;
     delete toDel;
+    
 }
 
+void deleteAtBeg(Node* &head){
+    if(head == NULL) return;
+    if(head->next == head){
+        delete head;
+        head = NULL;
+        return;
+    }
+
+    Node* temp = head;
+    Node* toDel = head;
+
+    while(temp->next != head){
+        temp = temp->next;
+    }
+
+    temp->next = head->next;
+    head = head->next;
+    delete toDel;
+}
 
 int main(){
 
