@@ -77,7 +77,7 @@ int main(){
     // Node* n1 = new Node(1);
     // Node* head = n1;
     // Node* n2 = new Node(2);
-    // n1->next = n2;
+    // n1->next = n2; 0
 
     Node* head = NULL;
     insertAtEnd(head, 1);

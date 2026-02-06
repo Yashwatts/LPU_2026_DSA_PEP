@@ -62,8 +62,8 @@ void insertAtPosition(Node* &head, int pos, int val){
     if(temp == NULL) return;
     node->next = temp->next;
     node->prev = temp;
+    temp->next->prev = node;
     temp->next = node;
-
 }
 
 void printList(Node* &head){
