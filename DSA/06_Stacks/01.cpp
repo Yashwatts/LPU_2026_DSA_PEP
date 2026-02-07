@@ -18,5 +18,6 @@ int main(){
     cout << st.size() << endl;
 
     if(st.empty()) cout << "is empty";
+    
     else cout << "not empty";
 }
