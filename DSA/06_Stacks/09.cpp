@@ -155,3 +155,38 @@
 //         q.push(x);
 //     }
 // };
+
+
+
+
+
+// https://www.geeksforgeeks.org/problems/reverse-first-k-elements-of-queue/1
+// class Solution {
+//   public:
+//     queue<int> reverseFirstK(queue<int> q, int k) {
+//         // code here
+//         stack<int> st;
+        
+//         if(k > q.size()) return q;
+        
+//         // Run a loop for k elements and push them in a stack
+//         for(int i=0; i < k; i++){
+//             st.push(q.front());
+//             q.pop();
+//         }
+        
+//         // Run a loop until stack is empty and push all elements back in queue
+//         while(!st.empty()){
+//             q.push(st.top());
+//             st.pop();
+//         }
+        
+//         // Run a loop till size - k, pop all the elements of queue and push them back in queue again
+//         int n = q.size();
+//         for(int i=0; i < n-k; i++){
+//             q.push(q.front());
+//             q.pop();
+//         }
+//         return q;
+//     }
+// };
