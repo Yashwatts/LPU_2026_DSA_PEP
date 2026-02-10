@@ -190,3 +190,66 @@
 //         return q;
 //     }
 // };
+
+
+
+
+// https://www.geeksforgeeks.org/problems/interleave-the-first-half-of-the-queue-with-second-half/1
+// class Solution {
+//   public:
+//     void rearrangeQueue(queue<int> &q) {
+//         // code here
+//         queue<int> q1;
+//         queue<int> q2;
+//         int n = q.size() / 2;
+        
+//         for(int i=0; i<n; i++){
+//             q1.push(q.front());
+//             q.pop();
+//         }
+//         while(!q.empty()){
+//             q2.push(q.front());
+//             q.pop();
+//         }
+//         for(int i=0; i<n; i++){
+//             q.push(q1.front());
+//             q1.pop();
+//             q.push(q2.front());
+//             q2.pop();
+//         }
+//     }
+// };
+
+
+// Another Solution
+
+// class Solution {
+//   public:
+//     void usingStack(queue<int> &q, stack<int> st1, stack<int> st2){
+//         if(st1.empty() && st2.empty()) return;
+        
+//         int x = st1.top();
+//         int y = st2.top();
+//         st1.pop();
+//         st2.pop();
+//         usingStack(q, st1, st2);
+//         q.push(x);
+//         q.push(y);
+//     }
+//     void rearrangeQueue(queue<int> &q) {
+//         // code here
+//         stack<int> st1;
+//         stack<int> st2;
+//         int n = q.size() / 2;
+        
+//         for(int i=0; i<n; i++){
+//             st1.push(q.front());
+//             q.pop();
+//         }
+//         while(!q.empty()){
+//             st2.push(q.front());
+//             q.pop();
+//         }
+//         usingStack(q, st1, st2);
+//     }
+// };
