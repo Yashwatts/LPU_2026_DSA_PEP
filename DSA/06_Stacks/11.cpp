@@ -158,3 +158,42 @@
 //  * StockSpanner* obj = new StockSpanner();
 //  * int param_1 = obj->next(price);
 //  */
+
+
+
+
+// https://www.geeksforgeeks.org/problems/the-celebrity-problem/1
+// class Solution {
+//   public:
+//     int celebrity(vector<vector<int>>& mat) {
+//         // code here
+//         stack<int> st;
+//         int n = mat.size();
+        
+//         // push all persons in stack
+//         for(int i=0; i<n; i++){
+//             st.push(i);
+//         }
+        
+//         // Find a potential celebrity
+//         while(st.size() > 1){
+//             int A = st.top();
+//             st.pop();
+            
+//             int B = st.top();
+//             st.pop();
+            
+//             // If A knows B then A cannot be a celebrity;
+//             if(mat[A][B] == 1) st.push(B);
+//             else st.push(A);
+//         }
+//         // if(st.empty()) return -1;
+//         int potentialCandidate = st.top();
+//         for(int i=0; i<n; i++){
+//             if(i == potentialCandidate) continue;
+//             if(mat[potentialCandidate][i] == 1) return -1;
+//             if(mat[i][potentialCandidate] == 0) return -1;
+//         }
+//         return potentialCandidate;
+//     }
+// };
