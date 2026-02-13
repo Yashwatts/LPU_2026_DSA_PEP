@@ -18,7 +18,6 @@
     6. Subtree -> Any node of a tree, with all of its descendents is a subtree
     7. Level -> The level of the node refers to its distance from the root, the root of the tree has generally level 0
 
-
 */
 
 #include <iostream>
