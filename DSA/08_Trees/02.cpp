@@ -14,6 +14,31 @@ class Node{
     }
 };
 
+int countNodes(Node* root){
+    // base case
+    if(root == NULL) return 0;
+    
+
+    // Count nodes in the left subtree
+    int x = countNodes(root->left);
+
+    // Count nodes in right subtree
+    int y = countNodes(root->right);
+
+    return x + y + 1;
+}
+
+int countLeafNodes(Node* root){
+    if(root == NULL) return 0;
+
+    if(root->left == NULL && root->right == NULL) return 1;
+
+    int x = countLeafNodes(root->left);
+    int y = countLeafNodes(root->right);
+
+    return x + y + 1;
+}
+
 int main(){
     Node* root = new Node(1);
     root->left = new Node(2);

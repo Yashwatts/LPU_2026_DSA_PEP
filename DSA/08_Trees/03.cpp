@@ -22,10 +22,16 @@ Preorder -> <Root> <Left> <Right>
     preorder(root){
     if(root == NULL) return;
     cout << root;
-    inorder(root->left);
-    inorder(root->right);
+    preorder(root->left);
+    preorder(root->right);
     }
     Output: 1, 2, 4, 5, 3, 6, 7
 Postorder -> <Left> <Right> <Root>
+    postorder(root){
+    if(root == NULL) return;
+    postorder(root->left);
+    postorder(root->right);
+    cout << root;
+    }
 
 */
