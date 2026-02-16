@@ -17,6 +17,7 @@
     5. Ancestors and Descendents -> If there is a path from node A to node B then A is called an ancestor of B and B is called a descendent of A
     6. Subtree -> Any node of a tree, with all of its descendents is a subtree
     7. Level -> The level of the node refers to its distance from the root, the root of the tree has generally level 0
+    8. 
 
 */
 
