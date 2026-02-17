@@ -53,3 +53,59 @@
 //         }
 //     }
 // };
+
+
+
+
+// https://www.geeksforgeeks.org/problems/k-distance-from-root/1
+// /* A binary tree node has data, pointer to left child
+//    and a pointer to right child /
+// struct Node
+// {
+//     int data;
+//     Node* left;
+//     Node* right;
+// }; */
+
+// class Solution {
+//   public:
+//     // function should print the nodes at k distance from root
+//     vector<int> Kdistance(Node *root, int k) {
+//         // Your code here
+//         // If root is null -> return empty list
+//         // init a queue and push root
+//         // track current distance = 0
+//         // loop while queue is not empty:
+//         //      if current distance == k -> collect all nodes in queue and return
+//         //      else process current level:
+//         //          traverse current level nodes
+//         //          push children to queue
+//         //      increment distance
+        
+//         vector<int> result;
+//         if(root == NULL) return result;
+        
+//         queue<Node*> q;
+//         q.push(root);
+//         int currentDistance = 0;
+        
+//         while(!q.empty()){
+//             int size = q.size();
+//             if(currentDistance == k){
+//                 while(!q.empty()){
+//                     result.push_back(q.front()->data);
+//                     q.pop();
+//                 }
+//                 break;
+//             }
+//             while(size--){
+//                 Node* node = q.front();
+//                 q.pop();
+//                 if(node->left) q.push(node->left);
+//                 if(node->right) q.push(node->right);
+//             }
+//             currentDistance++;
+//         }
+//         return result;
+//     }
+// };
