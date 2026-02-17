@@ -154,3 +154,40 @@
 //         return minValue(root->left);
 //     }
 // };
+
+
+
+// https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     void inorder(TreeNode* root, vector<int>& result){
+//         if(root==NULL) return;
+//         inorder(root->left, result);
+//         result.push_back(root->val);
+//         inorder(root->right, result);
+//     }
+//     bool findTarget(TreeNode* root, int k) {
+//         vector<int> result;
+//         inorder(root, result);
+
+//         int p1 = 0;
+//         int p2 = result.size() - 1;
+//         while(p1 < p2){
+//             if(result[p1] + result[p2] == k) return true;
+//             else if(result[p1] + result[p2] < k) p1++;
+//             else p2--;
+//         }
+//         return false;
+//     }
+// };
