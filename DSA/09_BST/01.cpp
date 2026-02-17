@@ -7,4 +7,6 @@ A Binary Search Tree(BST) is a special type of tree where
         All values in the RST are greater
     # Both LST and RST are also BST
 
+    # The inorder traversal of BST is always sorted
+
 */
