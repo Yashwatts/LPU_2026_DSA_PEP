@@ -71,3 +71,72 @@
 //         return {ans.first, ans.second};
 //     }
 // };
+
+
+
+
+// https://leetcode.com/problems/delete-node-in-a-bst/description/
+// /**
+//  * Definition for a binary tree node.
+//  * struct TreeNode {
+//  *     int val;
+//  *     TreeNode *left;
+//  *     TreeNode *right;
+//  *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+//  *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+//  * };
+//  */
+// class Solution {
+// public:
+//     // Step 1 -> Find the node to be deleted by comparisons
+//     // Step 2 -> Restructure its children while preserving BST order
+//         // There can be 3 cases for deleting a node
+//             // Case 1 -> No Child (Leaf Node) -> this can be deleted directly
+//             // Case 2 -> One Child -> Replace the current node with its only child
+//             // Case 3 -> Two Children - > To maintain the BST order, we can either choose inorder successor (smallest value in RST) or inorder predecessor (largest value in LST) and replace with current node 
+
+//     TreeNode* inorderSucc(TreeNode* node){
+//         while(node->left != NULL){
+//             node = node->left;
+//         }
+//         return node;
+//     }
+//     TreeNode* deleteNode(TreeNode* root, int key) {
+//         if(root == NULL) return NULL;
+
+//         if(key < root->val){
+//             root->left = deleteNode(root->left, key);
+//         }
+//         else if(key > root->val){
+//             root->right = deleteNode(root->right, key);
+//         }
+//         else{
+//             // Case 1 : Node has no left child
+//             // In this replace the node with its right child
+//             if(root->left == NULL){
+//                 TreeNode* temp = root->right;
+//                 delete root;
+//                 return temp;
+//             }
+//             // Case 2 : Node has no right child
+//             // In this replace the node with its left child
+//             else if(root->right == NULL){
+//                 TreeNode* temp = root->left;
+//                 delete root;
+//                 return temp;
+//             }
+            
+//             // Case 3 : Node has 2 children
+//             // Find inorder successor
+//             TreeNode* temp = inorderSucc(root->right);
+
+//             // Copy the inorder Successor (min element) value in the node which we were supposed to delete
+//             root->val = temp->val;
+
+//             // Delete the successor from the RST (as we have already copied the value)
+//             root->right = deleteNode(root->right, temp->val);
+//         }
+//         return root;
+//     }
+// };
