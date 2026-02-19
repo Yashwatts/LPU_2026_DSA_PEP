@@ -36,7 +36,7 @@ int countLeafNodes(Node* root){
     int x = countLeafNodes(root->left);
     int y = countLeafNodes(root->right);
 
-    return x + y + 1;
+    return x + y;
 }
 
 int main(){
