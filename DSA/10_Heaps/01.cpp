@@ -14,12 +14,12 @@ Heaps -> A heap is a Complete Binary Tree that follows the heap order property
 
 For any node,
 0-Based Indexing:
-    -> Left Child -> 2 * (i+1)
-    -> Right Child -> 2 * (i+2)
+    -> Left Child -> (2 * i)+1
+    -> Right Child -> (2 * i)+2
     -> Parent -> (i-1) / 2
 
 1-Based Indexing:
     -> Left Child -> 2 * i
-    -> Right Child -> 2 * (i+1)
+    -> Right Child -> (2 * i)+1
     -> Parent -> i / 2
 */
