@@ -32,3 +32,28 @@
 //         return pq.top();
 //     }
 // };
+
+
+
+// https://www.geeksforgeeks.org/problems/k-largest-elements4206/1
+// class Solution {
+//   public:
+//     vector<int> kLargest(vector<int>& arr, int k) {
+//         // Your code here
+//         priority_queue<int, vector<int>, greater<int>> pq_min;
+//         vector<int> ans(k);
+        
+//         for(int i : arr){
+//             pq_min.push(i);
+            
+//             if(pq_min.size() > k) pq_min.pop();
+//         }
+        
+//         while(!pq_min.empty()){
+//             ans[k-1] = pq_min.top(); 
+//             k--;
+//             pq_min.pop();
+//         }
+//         return ans;
+//     }
+// };
