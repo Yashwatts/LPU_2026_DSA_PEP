@@ -87,3 +87,31 @@
 //         }
 //     }
 // };
+
+
+
+
+// https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
+// class Solution {
+//   public:
+//     int minCost(vector<int>& arr) {
+//         // code here
+//         priority_queue<int, vector<int>, greater<int>> pq;
+//         int sum = 0;
+        
+//         for(int i : arr){
+//             pq.push(i);
+//         }
+        
+//         while(pq.size() > 1){
+//             int added = 0;
+//             added += pq.top();
+//             pq.pop();
+//             added += pq.top();
+//             pq.pop();
+//             sum += added;
+//             pq.push(added);
+//         }
+//         return sum;
+//     }
+// };
