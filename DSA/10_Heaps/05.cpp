@@ -1,118 +1,43 @@
-// https://leetcode.com/problems/kth-largest-element-in-an-array/description/
-// class Solution {
-// public:
-//     int findKthLargest(vector<int>& nums, int k) {
-//         priority_queue<int, vector<int>, greater<int>> pq_min;
+/*
 
-//         for(int i : nums){
-//             pq_min.push(i);
+- Priority Queue is a special type of queue where elements are accessed on basis of priority, not the insertion order
+- By default it has highest element priority
+- Internally it is implemented using heap (CBT) and max heap by default (largest element will be always on top)
 
-//             if(pq_min.size() > k) pq_min.pop();
-//         }
+*/
 
-//         return pq_min.top();
-//     }
-// };
+#include <iostream>
+#include <queue>
+using namespace std;
 
+int main(){
+    // Max Heap
+    priority_queue<int> pq_max;
 
+    // Min Heap
+    priority_queue<int, vector<int>, greater<int>> pq_min;
 
+    pq_max.push(10);
+    pq_max.push(5);
+    pq_max.push(50);
+    pq_max.push(20);
 
-// https://www.geeksforgeeks.org/problems/kth-smallest-element5635/1
-// class Solution {
-//   public:
-//     int kthSmallest(vector<int> &arr, int k) {
-//         // code here
-//         priority_queue<int> pq;
-        
-//         for(int i : arr){
-//             pq.push(i);
-            
-//             if(pq.size() > k) pq.pop();
-//         }
-//         return pq.top();
-//     }
-// };
+    cout << pq_max.size() << endl;
+    
+    while(!pq_max.empty()){
+        cout << pq_max.top() << " ";
+        pq_max.pop();
+    }
+    cout << endl;
 
+    pq_min.push(52);
+    pq_min.push(8);
+    pq_min.push(23);
+    pq_min.push(9);
 
+    while(!pq_min.empty()){
+        cout << pq_min.top() << " ";
+        pq_min.pop();
+    }
 
-// https://www.geeksforgeeks.org/problems/k-largest-elements4206/1
-// class Solution {
-//   public:
-//     vector<int> kLargest(vector<int>& arr, int k) {
-//         // Your code here
-//         priority_queue<int, vector<int>, greater<int>> pq_min;
-//         vector<int> ans(k);
-        
-//         for(int i : arr){
-//             pq_min.push(i);
-            
-//             if(pq_min.size() > k) pq_min.pop();
-//         }
-        
-//         while(!pq_min.empty()){
-//             ans[k-1] = pq_min.top(); 
-//             k--;
-//             pq_min.pop();
-//         }
-//         return ans;
-//     }
-// };
-
-
-
-
-// https://www.geeksforgeeks.org/problems/nearly-sorted-1587115620/1
-// class Solution {
-//   public:
-//     void nearlySorted(vector<int>& arr, int k) {
-//         // code here
-//         priority_queue<int, vector<int>, greater<int>> pq;
-        
-//         int n = arr.size();
-//         for(int i=0; i<k+1; i++){
-//             pq.push(arr[i]);
-//         }
-        
-//         int idx = 0;
-        
-//         for(int i=k+1; i<n; i++){
-//             arr[idx++] = pq.top();
-//             pq.pop();
-//             pq.push(arr[i]);
-//         }
-        
-//         while(!pq.empty()){
-//             arr[idx++] = pq.top();
-//             pq.pop();
-//         }
-//     }
-// };
-
-
-
-
-// https://www.geeksforgeeks.org/problems/minimum-cost-of-ropes-1587115620/1
-// class Solution {
-//   public:
-//     int minCost(vector<int>& arr) {
-//         // code here
-//         priority_queue<int, vector<int>, greater<int>> pq;
-//         int sum = 0;
-        
-//         for(int i : arr){
-//             pq.push(i);
-//         }
-        
-//         while(pq.size() > 1){
-//             int added = 0;
-//             added += pq.top();
-//             pq.pop();
-//             added += pq.top();
-//             pq.pop();
-//             sum += added;
-//             pq.push(added);
-//         }
-//         return sum;
-
-//     }
-// };
+}
