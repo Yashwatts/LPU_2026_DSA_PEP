@@ -30,8 +30,11 @@
 
 
     Types of BT:
-    Full Binary Tree -> A tree of height h has all its leaves at level h, means all non leaf nodes of a Full Binary Tree have 2 children and the leaf node have no children
-    Complete Binary Tree -> All levels are filled except the last level, the last level should be filled from left to right
+    1. Full Binary Tree -> A tree of height h has all its leaves at level h, means all non leaf nodes of a Full Binary Tree have 2 children and the leaf node have no children (either has 0 or 2 children)
+    2. Complete Binary Tree -> All levels are filled except the last level, the last level should be filled from left to right
+    3. Perfect Binary Tree -> All leaf nodes are at same level
+    4. Balanced Binary Tree -> Height of tree at max log(N), n-> number of nodes, n=8 then log2 8 = 3. So height cannot be more than 3
+    5. Degenerate Tree -> Skew Trees. Every node has a single children
 
 */
 
@@ -48,4 +51,4 @@ int main(){
 
 }
 
-// 110, 107, 513, 104 - Leetcode Questions
+// 107, 513, 104 - Leetcode Questions
