@@ -26,3 +26,43 @@
 //         return provinceCount;
 //     }
 // };
+
+
+
+
+
+// https://leetcode.com/problems/flood-fill/description/
+// class Solution {
+// public:
+//     void dfs(vector<vector<int>>& image, int row, int col, int originalColor, int newColor){
+//         int n = image.size();
+//         int m = image[0].size();
+
+//         if(row < 0 || row >= n || col < 0 || col >= m) return;
+
+//         if(image[row][col] != originalColor) return;
+
+//         image[row][col] = newColor; 
+
+//         // Top
+//         dfs(image, row-1, col, originalColor, newColor);
+
+//         // Bottom
+//         dfs(image, row+1, col, originalColor, newColor);
+
+//         // Left
+//         dfs(image, row, col-1, originalColor, newColor);
+
+//         // Right
+//         dfs(image, row, col+1, originalColor, newColor);
+//     }
+//     vector<vector<int>> floodFill(vector<vector<int>>& image, int sr, int sc, int color) {
+//         int originalColor = image[sr][sc];
+
+//         if(originalColor == color) return image;
+
+//         dfs(image, sr, sc, originalColor, color);
+
+//         return image;
+//     }
+// };
